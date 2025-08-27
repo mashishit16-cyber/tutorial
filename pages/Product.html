@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGlow Skincare</title>
+</head>
+<style>
+  body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          background-color: #f2f9f2;
+          color: #333;
+        }
+
+header {
+          background-color: #66aa66;
+          padding: 15px;
+          text-align: center;
+          color: white;
+        }
+
+nav {
+          background-color: #558855;
+          text-align: center;
+          padding: 10px;
+        }
+
+h2 {
+      text-align: center;
+      margin-top: 30px;
+      color: #4c8a4c;
+    }
+
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .product h3 {
+      color: #4c8a4c;
+      margin-top: 10px;
+    }
+
+    .product p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+
+.price {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+input[type="number"] {
+      width: 60px;
+      padding: 4px;
+      margin-top: 5px;
+    }
+
+.button {
+      background-color: #66aa66;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    #cart {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #ccc;
+    }
+
+    #cart h2 {
+      color: #4c8a4c;
+    }
+
+</style>
+<body>
+    <header>
+        <h1>EcoGlow Skincare</h1>
+        <p>Explore our natural skincare collection</p>
+      </header> 
+      <nav>
+        <a href="EcoGlow Skincare.html">Home</a>
+        <a href="Blog.html">Blog</a>
+        <a href="Contact.html">Contact</a>
+      </nav> 
+
+      <h2>Our Products</h2>
+
+      <div class="products">
+        <div class="product">
+          <img src="../Asset/Herbal-face-cream-1.png" width="120" height="150"><br\>
+          <h3>Herbal Face Cream</h3>
+          <p>Hydrating cream with rooibos and aloe vera for sensitive skin.</p>
+          <div class="price">R150.00</div>
+          <label>Quantity: <input type="number" id="qty1" value="1" min="1"></label><br>
+          <button onclick="addToCart('Herbal Face Cream', 120, 'qty1')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/Organic soap bar.jpg" width="120" height="150"><br\>
+          <h3>Organic Soap Bar</h3>
+          <p>Cold-pressed soap with lavender and tea tree oils.</p>
+          <div class="price">R80.00</div>
+          <label>Quantity: <input type="number" id="qty2" value="1" min="1"></label><br>
+          <button onclick="addToCart('Organic Soap Bar', 60, 'qty2')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/essential oil.jpeg" width="120" height="150"><br\>
+          <h3>Essential Body Oil</h3>
+          <p>Blend of jojoba and marula oil for silky skin.</p>
+          <div class="price">R170.00</div>
+          <label>Quantity: <input type="number" id="qty3" value="1" min="1"></label><br>
+          <button onclick="addToCart('Essential Body Oil', 150, 'qty3')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/coconut lip bom.jpg" width="120" height="150"><br\>
+          <h3>Coconut Lip Balm</h3>
+          <p>Moisturizing balm with coconut oil and shea butter.</p>
+          <div class="price">R40.00</div>
+          <label>Quantity: <input type="number" id="qty4" value="1" min="1"></label><br>
+          <button onclick="addToCart('Coconut Lip Balm', 40, 'qty4')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/Green clay mask.jpeg" width="120" height="150"><br\>
+          <h3>Green Clay Face Mask</h3>
+          <p>Detox mask that cleanses and tightens pores.</p>
+          <div class="price">R95.00</div>
+          <label>Quantity: <input type="number" id="qty5" value="1" min="1"></label><br>
+          <button onclick="addToCart('Green Clay Face Mask', 85, 'qty5')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/Rose water.webp" width="120" height="150"><br\>
+          <h3>Rose Water Toner</h3>
+          <p>Alcohol-free toner with rose water and chamomile.</p>
+          <div class="price">R65.00</div>
+          <label>Quantity: <input type="number" id="qty6" value="1" min="1"></label><br>
+          <button onclick="addToCart('Rose Water Toner', 75, 'qty6')">Add to Cart</button>
+        </div>
+    
+        <div class="product">
+          <img src="../Asset/Vitamin C Serum.avif" width="120" height="150"><br\>
+          <h3>Vitamin C Serum</h3>
+          <p>Brightening serum with vitamin C and hyaluronic acid.</p>
+          <div class="price">R200.00</div>
+          <label>Quantity: <input type="number" id="qty7" value="1" min="1"></label><br>
+        <button onclick="addToCart('Vitamin C Serum', 180, 'qty7')">Add to Cart</button>
+        </div>
+      </div>
+
+      <div id="cart">
+        <h2>Cart Summary</h2>
+        <div id="cartContents">
+          <p>No items in cart yet.</p>
+        </div>
+      </div>
+
+    <script>
+      let cart = [];
+  
+      function addToCart(name, price, qtyId) {
+        const quantity = parseInt(document.getElementById(qtyId).value);
+        const existing = cart.find(item => item.name === name);
+  
+        if (existing) {
+          existing.quantity += quantity;
+        } else {
+          cart.push({ name, price, quantity });
+        }
+  
+        renderCart();
+      }
+  
+      function renderCart() {
+        const cartDiv = document.getElementById('cartContents');
+        if (cart.length === 0) {
+          cartDiv.innerHTML = '<p>No items in cart yet.</p>';
+          return;
+        }
+  
+        let html = '<ul>';
+        let total = 0;
+  
+        cart.forEach(item => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+          html += `<li>${item.name} x ${item.quantity} = R${itemTotal.toFixed(2)}</li>`;
+        });
+  
+        html += `</ul><p><strong>Total: R${total.toFixed(2)}</strong></p>`;
+        cartDiv.innerHTML = html;
+      }
+    </script>
+    
+      <footer>
+        <p>&copy; 2025 EcoGlow Skincare | support@ecoglow.co.za</p>
+      </footer>
+</body>
+</html>
